@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     classNames: ['lb-table-pager'],
-    pageSizeList: [10, 20, 30],
+
+    page: 1,
 
     atFirstPage: Ember.computed('page', function(){
         return this.get('page') === 1;
@@ -31,16 +32,18 @@ export default Ember.Component.extend({
             if (val < 1) {
                 val = 1;
             }
-            this.set('currentPage', val);
             this.set('page', val);
+            this.get('page-change')(val);
         },
 
         firstPage() {
             this.set('page', 1);
+            this.get('page-change')(1);
         },
 
         lastPage() {
             this.set('page', this.get('totalPage'));
+            this.get('page-change')(this.get('totalPage'));
         },
 
         nextPage() {
@@ -50,6 +53,7 @@ export default Ember.Component.extend({
                 next = totalPage;
             }
             this.set('page', next);
+            this.get('page-change')(next);
         },
 
         prevPage() {
@@ -58,6 +62,7 @@ export default Ember.Component.extend({
                 prev = 1;
             }
             this.set('page', prev);
+            this.get('page-change')(prev);
         }
     }
 });

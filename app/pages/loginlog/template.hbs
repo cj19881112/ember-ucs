@@ -10,8 +10,8 @@
     {{/main-container-head}}
 
     {{#main-container-body}}
-        {{#lb-table}}
-            {{#lb-table-header}}
+        <table class="lb-table">
+            <thead>
                 <tr>
                     <th class="lb-table-seq"></th>
                     <th>用户</th>
@@ -19,9 +19,9 @@
                     <th>时间</th>
                     <th>结果</th>
                 </tr>
-            {{/lb-table-header}}
-            {{#lb-table-body rowdata=model limit=limit page=page total=total as |rows|}}
-                {{#each rows as |loginLog index|}}
+            </thead>
+            <tbody>
+                {{#each model as |loginLog index|}}
                     <tr class="data-row">
                         <td class="lb-table-seq">{{index-of-table-item limit page index}}</td>
                         <td>{{loginLog.userName}}</td>
@@ -29,8 +29,17 @@
                         <td>{{moment-format loginLog.time 'YYYY-MM-DD HH:mm:ss'}}</td>
                         <td>{{{boolean-to-success loginLog.result}}}</td>
                     </tr>
+                {{else}}
+                <tr>
+                    <td colspan="5">无数据</td>
+                </tr>
                 {{/each}}
-            {{/lb-table-body}}
-        {{/lb-table}}
+                <tr>
+                    <td colspan="5" class="lb-table-pager-container">
+                        {{table-pager limitList=limitList total=total page-change=(action gotoPage) limit-change="setLimit"}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     {{/main-container-body}}
 {{/main-container}}
