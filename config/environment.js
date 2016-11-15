@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'library',
     environment: environment,
+    podModulePrefix: 'library/pages',
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

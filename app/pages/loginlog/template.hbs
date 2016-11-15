@@ -1,0 +1,36 @@
+{{#main-container}}
+    {{#main-container-head}}
+        {{#main-container-slab}}
+            {{#link-to 'dashboard'}} 首页 {{/link-to}} > 登录日志
+        {{/main-container-slab}}
+
+        {{#main-container-tool}}
+            {{input-group4search on-search=(action 'doSearch')}}
+        {{/main-container-tool}}
+    {{/main-container-head}}
+
+    {{#main-container-body}}
+        {{#lb-table}}
+            {{#lb-table-header}}
+                <tr>
+                    <th class="lb-table-seq"></th>
+                    <th>用户</th>
+                    <th>系统</th>
+                    <th>时间</th>
+                    <th>结果</th>
+                </tr>
+            {{/lb-table-header}}
+            {{#lb-table-body rowdata=model limit=limit page=page total=total as |rows|}}
+                {{#each rows as |loginLog index|}}
+                    <tr class="data-row">
+                        <td class="lb-table-seq">{{index-of-table-item limit page index}}</td>
+                        <td>{{loginLog.userName}}</td>
+                        <td>{{loginLog.systemName}}</td>
+                        <td>{{moment-format loginLog.time 'YYYY-MM-DD HH:mm:ss'}}</td>
+                        <td>{{{boolean-to-success loginLog.result}}}</td>
+                    </tr>
+                {{/each}}
+            {{/lb-table-body}}
+        {{/lb-table}}
+    {{/main-container-body}}
+{{/main-container}}

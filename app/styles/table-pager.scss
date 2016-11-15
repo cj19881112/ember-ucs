@@ -1,0 +1,21 @@
+.lb-table-pager {
+    font-size: 13px;
+
+    a {
+        text-decoration: underline;
+    }
+
+    span {
+        margin: 0px 2px;
+    }
+
+    input {
+        display: inline;
+    }
+
+    .small-input {
+        height: 20px;
+        width: 30px;
+        margin: 0px 5px;
+    }
+}

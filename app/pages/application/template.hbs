@@ -1,0 +1,34 @@
+{{#if isAuthed}}
+    <div class="lb-body lb-full-height">
+        <div class="lb-sidebar">
+            <div class="lb-logo">
+                {{#link-to "dashboard"}}<h2>UCS</h2>{{/link-to}}
+            </div>
+            <ul class="lb-menu">
+                {{menu-item itemName="系统管理" itemIcon="glyphicon-cog" itemRoute="system"}}
+                {{menu-item itemName="用户管理" itemIcon="glyphicon-user" itemRoute="user"}}
+                {{menu-item itemName="登录日志" itemIcon="glyphicon-list-alt" itemRoute="loginlog"}}
+            </ul>
+        </div>
+
+        <div class="lb-main"> 
+            <div class="lb-toolbar">
+                <div class="lb-toolbar-slab pull-left">
+                    <h4>统一登录中心</h4>
+                </div>
+                <ul class="lb-toolbar-btn pull-right">
+                    {{toolbar-button buttonName="张老三" buttonIcon="glyphicon-user" buttonRoute="userinfo" class="user"}}
+                    {{toolbar-button buttonName="系统设置" buttonIcon="glyphicon-cog" buttonRoute="setting" class="setting"}}
+                    {{toolbar-button buttonName="退出" buttonIcon="glyphicon-share-alt" buttonRoute="logout" class="logout"}}
+                </ul>
+                <span class="clearfix"></span>
+            </div>
+            <div>
+                {{outlet}}
+            </div>
+        </div>
+    </div>
+{{else}}
+    {{outlet}}
+{{/if}}
+

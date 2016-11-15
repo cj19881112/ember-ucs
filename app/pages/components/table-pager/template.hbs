@@ -1,0 +1,45 @@
+<div class="pull-left">
+    <span>共{{total}}条</span>
+    <span>共{{totalPage}}页</span>
+</div>
+
+<div class="pull-right">
+    <span>
+        {{#if atFirstPage}}
+            <span>首页</span>
+        {{else}}
+            <a href="javascript:void(0)" {{action 'firstPage'}}>首页</a>
+        {{/if}}
+    </span>
+    <span>
+        {{#if atFirstPage}}
+            <span>上一页</span>
+        {{else}}
+            <a href="javascript:void(0)" {{action 'prevPage'}}>上一页</a>
+        {{/if}}
+    </span>
+    <span>
+        每页
+        <select onchange={{action "pageSizeChange" value="target.value"}}>
+            {{#each pageSizeList as |item|}}
+                <option>{{item}}</option>
+            {{/each}}
+        </select>
+        页
+    </span>
+    <span>第{{input class="small-input" value=currentPage enter=(action 'gotoPage') }}页</span>
+    <span>
+        {{#if atLastPage}}
+            <span>下一页</span>
+        {{else}}
+            <a href="javascript:void(0)" {{action 'nextPage'}}>下一页</a>       
+        {{/if}} 
+    </span>
+    <span>
+        {{#if atLastPage}}
+            <span>尾页</span>
+        {{else}}
+            <a href="javascript:void(0)" {{action 'lastPage'}}>尾页</a>
+        {{/if}}
+    </span>
+</div>

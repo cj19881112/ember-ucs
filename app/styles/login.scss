@@ -1,0 +1,55 @@
+$padding: 20px;
+$radius: 4px;
+$loginBodyColor: rgb(238, 238, 238);
+
+.lb-login-box {
+    width: 280px;
+    height: 400px;
+
+    .error_message {
+        color: #F15656;
+        font-size: 12px;
+    }
+
+    .lb-login-head {
+        height: 80px;
+        border-radius: $radius $radius 0px 0px;
+        background-color: white;
+        padding: $padding;
+    }
+
+    .lb-login-body {
+        background-color: $loginBodyColor;
+        border-radius: 0px 0px $radius $radius;
+        padding: $padding;
+
+        .lb-input-tuple  {
+            input {
+                position: relative;
+            }
+
+            input:focus {
+                z-index: 2;
+            }
+
+            input:nth-child(1) {
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                margin-bottom: -1px;
+            }
+
+            input:nth-child(2) {
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+        }
+        
+        .lb-forget-password {
+            margin-top: 10px;
+        }
+    }
+
+}
+
+
+

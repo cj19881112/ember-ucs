@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="lb-center-box lb-login-box">
+        <div class="lb-login-head">
+            <div class="pull-left">
+                <h4>统一登录系统</h4>
+                <span class="error_message">{{errorMessage}}</span>
+            </div>
+            <div class="pull-right">
+                <h6 class="glyphicon glyphicon-lock"></h6>
+            </div>
+        </div>
+
+        <form class="lb-login-body">
+            <div class="form-group lb-input-tuple">
+                {{input type="text" value=userName class="form-control" placeholder="请输入用户名"}}
+                {{input type="password" value=password class="form-control" placeholder="请输入密码"}}
+            </div>
+
+            <button {{action "login"}} class="form-control btn btn-success">登录</button>
+            <div class="form-group">
+                <div class="checkbox pull-left">
+                    <label class="text-primary">
+                        <input type="checkbox" />
+                        <small>记住密码</small>
+                    </label>
+                </div>
+                <a href="javascript:void(0)" class="pull-right lb-forget-password"><small>忘记密码?</small></a>
+                <span class="clearfix"></span>
+            </div>
+        </form>
+    </div>
+    
+</div>

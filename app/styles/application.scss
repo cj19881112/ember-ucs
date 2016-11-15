@@ -1,0 +1,147 @@
+$sidbarWidth: 80px;
+$toolbarHeight: 50px;
+$sidbarColor: deepskyblue;
+$sidbarSelectedItemColor: #0DB0E6;
+
+.lb-body {
+    .lb-sidebar {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        width: $sidbarWidth;
+        background-color: $sidbarColor;
+        color: white;
+
+        .lb-logo {
+            height: $toolbarHeight;
+            width: $sidbarWidth;
+            text-align: center;
+            opacity: .8;
+            font-weight: bold;
+        }
+
+        .lb-menu {
+            a {
+                width: $sidbarWidth;
+                text-align: center;
+                font-size: 10px;
+                padding: 15px 0px;
+                display: block;
+                font-family: '微软雅黑';
+                position: relative;
+
+                div.glyphicon {
+                    font-size: 25px;
+                    margin-bottom: 5px;
+                }
+                
+                .triangle {
+                    border-color: $sidbarSelectedItemColor #FFF $sidbarSelectedItemColor $sidbarSelectedItemColor;
+                    border-style: solid;
+                    border-width: 8px 8px 8px 0px;
+                    height: 0px;
+                    width: 0px;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    bottom: 0px;
+                    margin: auto;
+                    display: none;
+                }
+            }
+
+            a.active {
+                background-color:$sidbarSelectedItemColor;
+
+                .triangle {
+                    display: block;
+                }
+            }
+
+        }
+    }
+
+    .lb-main {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        left: $sidbarWidth;
+        background-color: #F5F5F5;
+
+        .lb-toolbar {
+            background-color: white;
+            border-bottom: 1px solid #DCDCDC;
+            padding: 0px 20px;
+
+            * {
+                margin: 0;
+            }
+            
+            .lb-toolbar-btn *, .lb-toolbar-slab * {
+                line-height: $toolbarHeight;
+                height: $toolbarHeight;
+                display: inline-block;
+            }
+
+            .lb-toolbar-btn {
+                font-size: 13px;
+
+                a {
+                    padding: 0px 10px;
+
+                    span {
+                        margin-right: 3px;
+                    }
+                }
+
+                a.active {
+                    background-color: #EAEAEA;
+                }
+                
+
+                .user span {
+                    color: red;
+                }
+
+                .setting span {
+                    color: mediumseagreen;
+                }
+
+                .logout span {
+                    color: dodgerblue;
+                }
+            }
+        }
+
+        .lb-main-container {
+            padding: 20px 0px 0px 20px;
+            margin-top: $toolbarHeight;
+        }
+
+
+
+        .lb-main-path {
+            height: 40px;
+
+            .lb-main-search {
+                margin-right: 20px;
+            }
+
+            .lb-main-path-slab {
+                display: inline-block;
+                line-height: 34px;
+            }
+        }
+
+
+        .lb-main-body {
+            position: absolute;
+            background-color: white;
+            padding: 20px;
+            margin-top: 60px;
+            margin-left: 20px;
+        }
+    }
+}

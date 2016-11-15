@@ -1,0 +1,35 @@
+$headBackgroundColor: #F5F6F7;
+
+.lb-table-container {
+    position: relative;
+
+    .lb-table {
+        width: 100%;
+        margin: 10px 0px;
+
+        th {
+            font-weight: normal;
+            background-color: $headBackgroundColor;
+        }
+
+        td, th {
+            text-align: center;
+            padding: 5px 0px;
+            height: 40px;
+        }
+
+
+        .lb-table-seq {
+            min-width: 20px;
+        }
+
+        .lb-table-pager-container {
+            padding: 5px;
+            border-top: 1px solid #dce2e7;
+        }
+
+        .data-row:hover {
+            background-color: #D3E9FF;
+        }
+    }
+}
