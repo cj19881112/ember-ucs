@@ -36,7 +36,7 @@
                 {{/each}}
                 <tr>
                     <td colspan="5" class="lb-table-pager-container">
-                        {{table-pager limitList=limitList total=total page-change=(action gotoPage) limit-change="setLimit"}}
+                        {{table-pager limitList=limitList total=total page-change=(action 'gotoPage') limit-change="setLimit"}}
                     </td>
                 </tr>
             </tbody>
